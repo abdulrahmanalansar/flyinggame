@@ -135,12 +135,14 @@
     <ClInclude Include="include\glfw3.h" />
     <ClInclude Include="include\stb_image.h" />
     <ClInclude Include="main\shader.h" />
-    <ClInclude Include="VertexBufferO.h" />
+    <ClInclude Include="main\VertexBufferO.h" />
+    <ClInclude Include="main\renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main\main.cpp" />
     <ClCompile Include="main\shader.cpp" />
-    <ClCompile Include="VertexBufferO.cpp" />
+    <ClCompile Include="main\VertexBufferO.cpp" />
+    <ClCompile Include="main\renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="dependencies\glew32.lib" />

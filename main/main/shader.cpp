@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include "VertexBufferO.h"
 Shader::Shader(const std::string& filepath)
 	:m_filepath(filepath), m_RendererID(0)
 {
@@ -56,6 +57,7 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 	return id;
 
 }
+
 
 
 void Shader::Bind() const

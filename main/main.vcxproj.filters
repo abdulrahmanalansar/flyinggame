@@ -27,7 +27,10 @@
     <ClInclude Include="main\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VertexBufferO.h">
+    <ClInclude Include="main\VertexBufferO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,7 +41,10 @@
     <ClCompile Include="main\shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VertexBufferO.cpp">
+    <ClCompile Include="main\VertexBufferO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main\renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
