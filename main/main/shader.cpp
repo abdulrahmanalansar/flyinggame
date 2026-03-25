@@ -4,6 +4,42 @@
 #include <sstream>
 #include <fstream>
 #include "VertexBufferO.h"
+#include <iostream>
+
+shaderprogramsource Shader::parseshader(const std::string& filepath) {
+	enum class ShaderType {
+		NONE = -1, VERTEX = 0, FREGMENT = 1
+	};
+
+	std::ifstream stream(filepath);
+	std::string line;
+	std::stringstream ss[2];
+	ShaderType type = ShaderType::NONE;
+
+	while (std::getline(stream, line)) {
+
+		if (line.find("#shader") != std::string::npos) {
+
+			if (line.find("vertex") != std::string::npos) {
+				type = ShaderType::VERTEX;
+			}
+
+
+			else if (line.find("fragment") != std::string::npos) {
+				type = ShaderType::FREGMENT;
+			}
+
+
+		}
+		else if (type != ShaderType::NONE) {
+			ss[(int)type] << line << '\n';
+		}
+	}
+	std::cout << ss[0].str() << std::endl;
+	return { ss[0].str(), ss[1].str() };
+}
+
+
 Shader::Shader(const std::string& filepath)
 	:m_filepath(filepath), m_RendererID(0)
 {
@@ -71,36 +107,4 @@ void Shader::Unbind() const
 }
 
 
-shaderprogramsource Shader::parseshader(const std::string& filepath) {
-	enum class ShaderType {
-		NONE = -1, VERTEX = 0, FREGMENT = 1
-	};
-
-	std::ifstream stream(filepath);
-	std::string line;
-	std::stringstream ss[2];
-	ShaderType type = ShaderType::NONE;
-
-	while (std::getline(stream, line)) {
-
-		if (line.find("#shader") != std::string::npos) {
-
-			if (line.find("vertex") != std::string::npos) {
-				type = ShaderType::VERTEX;
-			}
-
-
-			else if (line.find("fragment") != std::string::npos) {
-				type = ShaderType::FREGMENT;
-			}
-
-
-		}
-		else if (type != ShaderType::NONE) {
-			ss[(int)type] << line << '\n';
-		}
-	}
-
-	return { ss[0].str(), ss[1].str() };
-}
 

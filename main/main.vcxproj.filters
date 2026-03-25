@@ -15,6 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <Library Include="dependencies\glew32.lib" />
+    <Library Include="dependencies\glfw3.lib" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="include\glew.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -24,33 +28,44 @@
     <ClInclude Include="include\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main\VertexBufferO.h">
+    <ClInclude Include="main\IndexBufferO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main\renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="main\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\VertexArrayB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\VertexBufferO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\VertexBufferLayout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main\IndexBufferO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="main\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\shader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\VertexBufferO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main\renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="dependencies\glfw3.lib" />
-    <Library Include="dependencies\glew32.lib" />
+    <ClCompile Include="main\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main\VertexArrayB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main\VertexBufferO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="main\shader.shader" />

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{49424434-a294-42d6-b995-d69dd0760d9a}</ProjectGuid>
-    <RootNamespace>main</RootNamespace>
+    <ProjectGuid>{9a8d049d-1ad8-411f-9885-83f864e4d362}</ProjectGuid>
+    <RootNamespace>fly</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -102,14 +102,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\opengl\pro\main\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>D:\opengl\pro\fly\fly\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\opengl\pro\main\main\dependencies;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\opengl\pro\fly\fly\dependencies;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -120,33 +120,38 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\opengl\pro\main\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>D:\opengl\pro\fly\fly\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\opengl\pro\main\main\dependencies;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\opengl\pro\fly\fly\dependencies;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <Library Include="dependencies\glew32.lib" />
+    <Library Include="dependencies\glfw3.lib" />
+  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\glew.h" />
     <ClInclude Include="include\glfw3.h" />
     <ClInclude Include="include\stb_image.h" />
-    <ClInclude Include="main\shader.h" />
-    <ClInclude Include="main\VertexBufferO.h" />
+    <ClInclude Include="main\IndexBufferO.h" />
     <ClInclude Include="main\renderer.h" />
+    <ClInclude Include="main\shader.h" />
+    <ClInclude Include="main\VertexArrayB.h" />
+    <ClInclude Include="main\VertexBufferLayout.h" />
+    <ClInclude Include="main\VertexBufferO.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main\IndexBufferO.cpp" />
     <ClCompile Include="main\main.cpp" />
-    <ClCompile Include="main\shader.cpp" />
-    <ClCompile Include="main\VertexBufferO.cpp" />
     <ClCompile Include="main\renderer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="dependencies\glew32.lib" />
-    <Library Include="dependencies\glfw3.lib" />
+    <ClCompile Include="main\shader.cpp" />
+    <ClCompile Include="main\VertexArrayB.cpp" />
+    <ClCompile Include="main\VertexBufferO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="main\shader.shader" />

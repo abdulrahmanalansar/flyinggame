@@ -1,5 +1,5 @@
-#include "VertexBufferO.h"
 #include <glew.h>
+#include "VertexBufferO.h"
 
 VertexBufferO::VertexBufferO(unsigned int size, const void* data)
 {
@@ -10,12 +10,15 @@ VertexBufferO::VertexBufferO(unsigned int size, const void* data)
 
 VertexBufferO::~VertexBufferO()
 {
+	glDeleteBuffers(1, &m_RendererID);
 }
 
 void VertexBufferO::Bind() const
 {
+	glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
 }
 
 void VertexBufferO::Unbind() const
 {
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }

@@ -1,11 +1,10 @@
 #pragma once
-
-#include "renderer.h"
+#include <glew.h>
 class VertexBufferO
 {
 	private:
 		unsigned int m_RendererID;
-public:
+	public:
 	VertexBufferO(unsigned int size, const void* data);
 	~VertexBufferO();
 	

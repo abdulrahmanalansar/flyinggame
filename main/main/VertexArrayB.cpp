@@ -1,8 +1,5 @@
-#include <glew.h>
-#include "VertexArrayB.h"
-#include "shader.h"
-#include "VertexBufferO.h"
-#include "IndexBufferO.h"
+#include"VertexArrayB.h"
+#include"VertexBufferLayout.h"
 
 VertexArrayB::VertexArrayB()
 {
@@ -14,40 +11,35 @@ VertexArrayB::~VertexArrayB()
 	glDeleteVertexArrays(1, &m_RendererID);
 }
 
-void VertexArrayB::AddBuffer(const VertexBufferO& vb, const int& attribcount)
+void VertexArrayB::AddBuffer(const VertexBufferO& vb, const VertexBufferLayout& layout)
 {
 	Bind();
 	vb.Bind();
-
-	for (unsigned int i = 0; i < attribcount; i++) {
-
+	const auto& elements = layout.GetElement();
+	unsigned int offset = 0;
+	for (unsigned int i = 0; i < elements.size(); i++) {
+		const auto& element = elements[i];
 		glEnableVertexAttribArray(i);
-		
-		switch (i)
-		{
-		case 0:
-			glVertexAttribPointer(i, 1, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (const void*)0);
-			
-			break;
-			
-		case 1:
-
-			glVertexAttribPointer(i, 2, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)(3 * sizeof(float)));
-
-			break;
-			
-		}
-
+		glVertexAttribPointer(
+			i,
+			element.count,
+			element.type,
+			element.normalized,
+			layout.GetStride(),
+			reinterpret_cast<const void*>(static_cast<uintptr_t>(offset))
+		);
+		offset += element.count * VertexBufferElement::GetSizeOfType(element.type);
 	}
 }
-
 
 void VertexArrayB::Bind() const
 {
 	glBindVertexArray(m_RendererID);
+
 }
 
 void VertexArrayB::Unbind() const
 {
-	glBindVertexArray( 0);
+	glBindVertexArray(0);
+
 }
