@@ -46,6 +46,9 @@
     <ClInclude Include="main\VertexBufferLayout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="main\GenerateGrid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main\IndexBufferO.cpp">
@@ -64,6 +67,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main\VertexBufferO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main\GenerateGrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

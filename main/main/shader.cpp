@@ -3,9 +3,12 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include "VertexBufferO.h"
 #include <iostream>
+#include "renderer.h"
 
+#include <glm/glm.hpp>                   
+#include <glm/gtc/matrix_transform.hpp>  
+#include <glm/gtc/type_ptr.hpp>    
 shaderprogramsource Shader::parseshader(const std::string& filepath) {
 	enum class ShaderType {
 		NONE = -1, VERTEX = 0, FREGMENT = 1
@@ -73,6 +76,8 @@ unsigned int Shader::CreateShader(const std::string& vertexShader, const std::st
 
 
 
+
+
 unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 {
 	unsigned int id = glCreateShader(type);
@@ -106,5 +111,28 @@ void Shader::Unbind() const
 	glUseProgram(0);
 }
 
+void Shader::setuniform4f(const std::string& name, float v0, float v1, float v2, float v3)
+{
+	glUniform4f(GetUniformLocation(name), v0, v1, v2, v3);
+}
+
+void Shader::setuniformm4f(const std::string& name, const glm::mat4& matrix)
+{
+	glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, glm::value_ptr(matrix));
+}
 
 
+unsigned int Shader::GetUniformLocation(const std::string& name)
+{
+	
+	if (m_UniformLocationCache.find(name) != m_UniformLocationCache.end())
+		return m_UniformLocationCache[name];
+
+	int location = glGetUniformLocation(m_RendererID, name.c_str());
+
+	if (location == -1)
+		std::cout << "Warning: uniform '" << name << "' doesn't exist!" << std::endl;
+
+	m_UniformLocationCache[name] = location;
+	return location;
+}

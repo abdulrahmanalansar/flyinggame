@@ -34,7 +34,7 @@ void VertexArrayB::AddBuffer(const VertexBufferO& vb, const VertexBufferLayout& 
 
 void VertexArrayB::Bind() const
 {
-	glBindVertexArray(m_RendererID);
+	 glBindVertexArray(m_RendererID);
 
 }
 
