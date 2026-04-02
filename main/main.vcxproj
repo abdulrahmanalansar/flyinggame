@@ -109,7 +109,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\opengl\pro\main\main\dependencies;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>assimp.lib;glfw3.lib;opengl32.lib;glew32.lib;zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,7 +127,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\opengl\pro\main\main\dependencies;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>assimp.lib;glfw3.lib;opengl32.lib;glew32.lib;zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -135,28 +135,36 @@
     <Library Include="dependencies\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main\GenerateGrid.h" />
+    <ClInclude Include="main\base\load_model.h" />
+    <ClInclude Include="main\characer\character_movement.h" />
+    <ClInclude Include="main\base\input.h" />
+    <ClInclude Include="main\base\GenerateGrid.h" />
     <ClInclude Include="include\glew.h" />
     <ClInclude Include="include\glfw3.h" />
     <ClInclude Include="include\stb_image.h" />
-    <ClInclude Include="main\IndexBufferO.h" />
-    <ClInclude Include="main\renderer.h" />
-    <ClInclude Include="main\shader.h" />
-    <ClInclude Include="main\VertexArrayB.h" />
-    <ClInclude Include="main\VertexBufferLayout.h" />
-    <ClInclude Include="main\VertexBufferO.h" />
+    <ClInclude Include="main\base\IndexBufferO.h" />
+    <ClInclude Include="main\base\renderer.h" />
+    <ClInclude Include="main\base\shader.h" />
+    <ClInclude Include="main\base\VertexArrayB.h" />
+    <ClInclude Include="main\base\VertexBufferLayout.h" />
+    <ClInclude Include="main\base\VertexBufferO.h" />
+    <ClInclude Include="main\base\move.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main\GenerateGrid.cpp" />
-    <ClCompile Include="main\IndexBufferO.cpp" />
-    <ClCompile Include="main\main.cpp" />
-    <ClCompile Include="main\renderer.cpp" />
-    <ClCompile Include="main\shader.cpp" />
-    <ClCompile Include="main\VertexArrayB.cpp" />
-    <ClCompile Include="main\VertexBufferO.cpp" />
+    <ClCompile Include="main\base\load_model.cpp" />
+    <ClCompile Include="main\characer\character_movement.cpp" />
+    <ClCompile Include="main\base\input.cpp" />
+    <ClCompile Include="main\base\GenerateGrid.cpp" />
+    <ClCompile Include="main\base\IndexBufferO.cpp" />
+    <ClCompile Include="main\base\main.cpp" />
+    <ClCompile Include="main\base\renderer.cpp" />
+    <ClCompile Include="main\base\shader.cpp" />
+    <ClCompile Include="main\base\VertexArrayB.cpp" />
+    <ClCompile Include="main\base\VertexBufferO.cpp" />
+    <ClCompile Include="main\base\move.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="main\shader.shader" />
+    <None Include="main\base\shader.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,8 +15,8 @@ void GenerateGrid::generatevertices()
         for (int col = 0; col < Grid_size; col++)
         {
             vertices[i++] = col * 0.1f;
-            
             vertices[i++] = row * 0.1f;
+            vertices[i++] = 0.0f;
         }
 
     }

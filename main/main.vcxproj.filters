@@ -28,52 +28,76 @@
     <ClInclude Include="include\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\IndexBufferO.h">
+    <ClInclude Include="main\base\IndexBufferO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\renderer.h">
+    <ClInclude Include="main\base\renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\shader.h">
+    <ClInclude Include="main\base\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\VertexArrayB.h">
+    <ClInclude Include="main\base\VertexArrayB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\VertexBufferO.h">
+    <ClInclude Include="main\base\VertexBufferO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\VertexBufferLayout.h">
+    <ClInclude Include="main\base\VertexBufferLayout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\GenerateGrid.h">
+    <ClInclude Include="main\base\GenerateGrid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\base\input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\characer\character_movement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\base\move.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\base\load_model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main\IndexBufferO.cpp">
+    <ClCompile Include="main\base\IndexBufferO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main\main.cpp">
+    <ClCompile Include="main\base\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main\renderer.cpp">
+    <ClCompile Include="main\base\renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main\shader.cpp">
+    <ClCompile Include="main\base\shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main\VertexArrayB.cpp">
+    <ClCompile Include="main\base\VertexArrayB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main\VertexBufferO.cpp">
+    <ClCompile Include="main\base\VertexBufferO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main\GenerateGrid.cpp">
+    <ClCompile Include="main\base\GenerateGrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main\base\input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main\characer\character_movement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main\base\move.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main\base\load_model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="main\shader.shader" />
+    <None Include="main\base\shader.shader" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 class GenerateGrid
 {
 private:
-	static const int Grid_size = 10;
+	static const int Grid_size = 5;
 
 	// 100 vertices * 3 floats
 	static const int Vertex_count = Grid_size * Grid_size;

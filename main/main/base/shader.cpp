@@ -63,13 +63,13 @@ unsigned int Shader::CreateShader(const std::string& vertexShader, const std::st
 	unsigned int vShader = CompileShader(GL_VERTEX_SHADER, vertexShader);
 	unsigned int fShader = CompileShader(GL_FRAGMENT_SHADER,fragmentShader);
 
-	glAttachShader(SProgram, vShader);
-	glAttachShader(SProgram, fShader);
-	glLinkProgram(SProgram);
-	glValidateProgram(SProgram);
+	GLCall(glAttachShader(SProgram, vShader));
+	GLCall(glAttachShader(SProgram, fShader));
+	GLCall(glLinkProgram(SProgram));
+	GLCall(glValidateProgram(SProgram));
 
-	glDeleteShader(vShader);
-	glDeleteShader(fShader);
+	GLCall(glDeleteShader(vShader));
+	GLCall(glDeleteShader(fShader));
 
 	return SProgram;
 }
@@ -83,7 +83,7 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 	unsigned int id = glCreateShader(type);
 	const char* src = source.c_str();
 	glShaderSource(id, 1, &src, nullptr);
-	glCompileShader(id);
+	GLCall(glCompileShader(id));
 
 	int result;
 	glGetShaderiv(id, GL_COMPILE_STATUS, &result);
@@ -103,12 +103,12 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 
 void Shader::Bind() const
 {
-	glUseProgram(m_RendererID);
+	GLCall(glUseProgram(m_RendererID));
 }
 
 void Shader::Unbind() const
 {
-	glUseProgram(0);
+	GLCall(glUseProgram(0));
 }
 
 void Shader::setuniform4f(const std::string& name, float v0, float v1, float v2, float v3)
