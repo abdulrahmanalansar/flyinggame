@@ -1,7 +1,7 @@
+/*bool ModelImporter::DoImport(const std::string& pFile)
 #include "load_model.h"
 #include <iostream>
 
-bool ModelImporter::DoImport(const std::string& pFile)
 {
     Assimp::Importer importer;
 
@@ -64,6 +64,7 @@ bool ModelImporter::DoImport(const std::string& pFile)
 
     std::cout << "Successfully loaded: " << pFile << std::endl;
     std::cout << "Vertices: " << vertices.size() << " | Indices: " << indices.size() << std::endl;
-
+   
     return true;
 }
+*/

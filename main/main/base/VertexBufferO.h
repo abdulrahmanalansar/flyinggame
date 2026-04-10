@@ -3,8 +3,10 @@
 class VertexBufferO
 {
 	private:
+
 		unsigned int m_RendererID;
 	public:
+	VertexBufferO() : m_RendererID(0) {}
 	VertexBufferO(unsigned int size, const void* data);
 	~VertexBufferO();
 	

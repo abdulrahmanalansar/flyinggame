@@ -19,15 +19,6 @@
     <Library Include="dependencies\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\glew.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\glfw3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="main\base\IndexBufferO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -49,16 +40,16 @@
     <ClInclude Include="main\base\GenerateGrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\base\input.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main\characer\character_movement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main\base\move.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="main\base\load_model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\base\texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\base\stb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -84,20 +75,19 @@
     <ClCompile Include="main\base\GenerateGrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main\base\input.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\characer\character_movement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\base\move.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main\base\load_model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main\base\texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="main\base\shader.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="main\texture\wall.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

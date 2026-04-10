@@ -1,6 +1,6 @@
 #pragma once
 #include<glew.h>
-#include <glfw3.h>
+#include<glfw3.h>
 #include"VertexArrayB.h"
 #include"shader.h"
 #include"IndexBufferO.h"
@@ -16,13 +16,12 @@ bool GLLogCall(const char* function, const char* file, int line);
 
 class Renderer {
 private:
-	glm::vec3 camPos = glm::vec3(0.0f, -1.0f, -5.0f);
 	double lastMouseX = 320.0, lastMouseY = 240.0;
 	float rotateX = 0.0f, rotateY = 0.0f;
 	GLFWwindow* window = nullptr;
 
-	glm::vec3 cameye = glm::vec3(10.0f, 10.0f, 10.0f);
-	glm::vec3 campos = glm::vec3(0.0f, 0.0f, 0.0f);
+	glm::vec3 cameye = glm::vec3(-5.0f, -5.0f, 14.0f);
+	glm::vec3 campos = glm::vec3(0.0f, 0.0f, 13.0f);
 
 public:
 

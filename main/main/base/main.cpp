@@ -1,61 +1,52 @@
-#include <glew.h>
+﻿#include <glew.h>
 #include <glfw3.h>
 #include <iostream>
 #include "renderer.h"
-#include "VertexBufferO.h"
 #include "VertexArrayB.h"
+#include "VertexBufferO.h"
 #include "IndexBufferO.h"
 #include "shader.h"
 #include "VertexBufferLayout.h"
 #include "GenerateGrid.h"
-#include "input.h"
+#include "texture.h"
 #include "load_model.h"
+
 int main()
 {
-    Renderer renderer;
-	
-	 renderer.Windowinit();
-    
-     ModelImporter import;
-    import.DoImport("assets/jet/jet.obj");
+	Renderer renderer;
+	renderer.Windowinit();
 
-    GenerateGrid grid;
+	GenerateGrid grid;
+    Shader shader("main/base/shader.shader");
+    texture texture("main/texture/wall.jpg");  // ← here, before loop
+
+
+    // Tell the shader which texture slot to use — do this once at startup
+    texture.bind(0);
+    shader.setUniform1i("u_Texture", 0);
 
     VertexArrayB va;
-    va.Bind();
-
-    VertexBufferO vb(import.vertices.size() * sizeof(Vertex), import.vertices.data());
-    vb.Bind();
-
+	VertexBufferO vb(sizeof(grid.vertices), grid.vertices);
     VertexBufferLayout layout;
-    layout.push<float>(3); // Position
-    layout.push<float>(3); // Normals
-    layout.push<float>(2); // UVs
+	layout.push<float>(3); // vertex positions
+	layout.push<float>(2); // uv coordinates
+	layout.push<float>(3); // vertex normals
+	va.AddBuffer(vb, layout);
+	IndexBufferO ib(grid.index_count, grid.indices);
 
-    va.AddBuffer(vb, layout);
-
-    Shader shader("main/base/shader.shader");
-    shader.Bind();
-
-    IndexBufferO ib(import.indices.size(), import.indices.data());
-    ib.Bind();
-
-
-    
+  
+   
 
     while (!glfwWindowShouldClose(renderer.getWindow()))
     {
-      
-		renderer.clear();
-        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);  
+        renderer.clear();
         shader.Bind();
-        renderer.mvp(shader);
-        renderer.draw(va, ib, shader);
+        renderer.mvp(shader); // sets view + projection uniforms
 
+		renderer.draw(va, ib, shader);
         glfwSwapBuffers(renderer.getWindow());
         glfwPollEvents();
     }
-
 
 
     glfwTerminate();
