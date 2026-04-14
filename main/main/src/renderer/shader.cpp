@@ -42,7 +42,6 @@ shaderprogramsource Shader::parseshader(const std::string& filepath) {
 	return { ss[0].str(), ss[1].str() };
 }
 
-
 Shader::Shader(const std::string& filepath)
 	:m_filepath(filepath), m_RendererID(0)
 {
@@ -54,7 +53,6 @@ Shader::~Shader()
 {
 	glDeleteProgram(m_RendererID);
 }
-
 
 
 unsigned int Shader::CreateShader(const std::string& vertexShader, const std::string& fragmentShader)
@@ -73,10 +71,6 @@ unsigned int Shader::CreateShader(const std::string& vertexShader, const std::st
 
 	return SProgram;
 }
-
-
-
-
 
 unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 {
@@ -98,8 +92,6 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 	return id;
 
 }
-
-
 
 void Shader::Bind() const
 {
@@ -126,6 +118,10 @@ void Shader::setUniform1i(const std::string& name, int value)
 	glUniform1i(GetUniformLocation(name), value);
 }
 
+void Shader::setUniformvec3(const std::string& name, const glm::vec3& vector)
+{
+	glUniform3fv(GetUniformLocation(name), 1, glm::value_ptr(vector));
+}
 
 unsigned int Shader::GetUniformLocation(const std::string& name)
 {

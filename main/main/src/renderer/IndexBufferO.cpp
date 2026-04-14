@@ -1,14 +1,12 @@
 #include <glew.h>
 #include "IndexBufferO.h"
 
-
 IndexBufferO::IndexBufferO(unsigned int count, const unsigned int* data)
 {
 	m_Count = count;
 	glGenBuffers(1, &m_RendererID);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererID);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(unsigned int), data, GL_STATIC_DRAW);
-
 }
 
 IndexBufferO::~IndexBufferO()

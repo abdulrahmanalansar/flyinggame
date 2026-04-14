@@ -1,9 +1,9 @@
-/*#pragma once
+#pragma once
 #include <string>
 #include <vector>
-//#include <assimp/Importer.hpp>
-//#include <assimp/scene.h>
-//#include <assimp/postprocess.h>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
 struct Vertex {
     float x, y, z;
@@ -19,4 +19,3 @@ public:
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 };
-*/

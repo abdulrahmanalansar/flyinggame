@@ -1,7 +1,6 @@
-/*bool ModelImporter::DoImport(const std::string& pFile)
 #include "load_model.h"
 #include <iostream>
-
+bool ModelImporter::DoImport(const std::string& pFile)
 {
     Assimp::Importer importer;
 
@@ -67,4 +66,3 @@
    
     return true;
 }
-*/

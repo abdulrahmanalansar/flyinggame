@@ -102,8 +102,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\opengl\pro\flyinggame\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\opengl\pro\flyinggame\main\main\shader;D:\opengl\pro\flyinggame\main\assets;D:\opengl\pro\flyinggame\main\main\src\renderer;D:\opengl\pro\flyinggame\main\main\src\utils;D:\opengl\pro\flyinggame\main\main\src\scene;D:\opengl\pro\flyinggame\main\main\src\core;main\main\src\renderer;D:\opengl\pro\flyinggame\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,8 +121,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\opengl\pro\flyinggame\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\opengl\pro\flyinggame\main\main\shader;D:\opengl\pro\flyinggame\main\assets;D:\opengl\pro\flyinggame\main\main\src\renderer;D:\opengl\pro\flyinggame\main\main\src\utils;D:\opengl\pro\flyinggame\main\main\src\scene;D:\opengl\pro\flyinggame\main\main\src\core;main\main\src\renderer;D:\opengl\pro\flyinggame\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,34 +137,52 @@
     <Library Include="dependencies\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\stb_image.h" />
+    <ClInclude Include="include\imgui\imconfig.h" />
+    <ClInclude Include="include\imgui\imgui.h" />
+    <ClInclude Include="include\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="include\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="include\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="include\imgui\imgui_internal.h" />
+    <ClInclude Include="include\imgui\imstb_rectpack.h" />
+    <ClInclude Include="include\imgui\imstb_textedit.h" />
+    <ClInclude Include="include\imgui\imstb_truetype.h" />
     <ClInclude Include="main\base\stb.h" />
-    <ClInclude Include="main\base\load_model.h" />
-    <ClInclude Include="main\base\GenerateGrid.h" />
-    <ClInclude Include="main\base\IndexBufferO.h" />
-    <ClInclude Include="main\base\renderer.h" />
-    <ClInclude Include="main\base\shader.h" />
-    <ClInclude Include="main\base\VertexArrayB.h" />
-    <ClInclude Include="main\base\VertexBufferLayout.h" />
-    <ClInclude Include="main\base\VertexBufferO.h" />
-    <ClInclude Include="main\base\texture.h" />
+    <ClInclude Include="main\src\core\Gui.h" />
+    <ClInclude Include="main\src\core\renderer.h" />
+    <ClInclude Include="main\src\renderer\IndexBufferO.h" />
+    <ClInclude Include="main\src\renderer\shader.h" />
+    <ClInclude Include="main\src\renderer\texture.h" />
+    <ClInclude Include="main\src\renderer\VertexArrayB.h" />
+    <ClInclude Include="main\src\renderer\VertexBufferLayout.h" />
+    <ClInclude Include="main\src\renderer\VertexBufferO.h" />
+    <ClInclude Include="main\src\scene\GenerateGrid.h" />
+    <ClInclude Include="main\src\scene\object.h" />
+    <ClInclude Include="main\src\utils\load_model.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main\base\load_model.cpp" />
-    <ClCompile Include="main\base\GenerateGrid.cpp" />
-    <ClCompile Include="main\base\IndexBufferO.cpp" />
-    <ClCompile Include="main\base\main.cpp" />
-    <ClCompile Include="main\base\renderer.cpp" />
-    <ClCompile Include="main\base\shader.cpp" />
-    <ClCompile Include="main\base\VertexArrayB.cpp" />
-    <ClCompile Include="main\base\VertexBufferO.cpp" />
-    <ClCompile Include="main\base\texture.cpp" />
+    <ClCompile Include="include\imgui\imgui.cpp" />
+    <ClCompile Include="include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="include\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="include\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="include\imgui\imgui_tables.cpp" />
+    <ClCompile Include="include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="main\src\core\Gui.cpp" />
+    <ClCompile Include="main\src\core\renderer.cpp" />
+    <ClCompile Include="main\src\main.cpp" />
+    <ClCompile Include="main\src\renderer\IndexBufferO.cpp" />
+    <ClCompile Include="main\src\renderer\shader.cpp" />
+    <ClCompile Include="main\src\renderer\texture.cpp" />
+    <ClCompile Include="main\src\renderer\VertexArrayB.cpp" />
+    <ClCompile Include="main\src\renderer\VertexBufferO.cpp" />
+    <ClCompile Include="main\src\scene\GenerateGrid.cpp" />
+    <ClCompile Include="main\src\scene\object.cpp" />
+    <ClCompile Include="main\src\utils\load_model.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="main\base\shader.shader" />
+    <None Include="main\shader\shader.shader" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="main\texture\wall.jpg" />
+    <Image Include="assets\texture\wall.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

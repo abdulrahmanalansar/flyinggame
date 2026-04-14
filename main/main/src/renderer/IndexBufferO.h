@@ -7,7 +7,6 @@ class IndexBufferO
 		unsigned int m_RendererID;
 		unsigned int m_Count;
 	public:
-		IndexBufferO() : m_RendererID(0), m_Count(0) {}
 		IndexBufferO(unsigned int count, const unsigned int* data);
 		~IndexBufferO();
 		
